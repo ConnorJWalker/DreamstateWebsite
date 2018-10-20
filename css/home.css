@@ -1,0 +1,55 @@
+body {
+    background-image: url(../assets/indexcover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    text-align: center;
+    position: absolute;
+    bottom: 49%;
+}
+
+.title h1 {
+    font-size: 2.5em;
+    letter-spacing: 7px;
+    display: inline;
+}
+
+.title-links {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title a {
+    display: block;
+    border: 1px solid var(--text-light);
+}
+
+.container {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+@media screen and (min-width: 900px) {
+    .title {
+        left: 7%;
+    }
+
+    .title h1 {
+        font-size: 6.5em;
+    }
+
+    .title-links {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .title-links a {
+        width: 49%;
+        padding: 7px 0;
+    }
+}

@@ -1,0 +1,93 @@
+:root {
+    --text-light: #cacaca;
+    --text-dark: #111;
+    --accent: #1fcdb8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    color: var(--text-light);
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+/* Nav bar */
+nav {
+    text-align: right;
+    width: 100%;
+    position: sticky;
+    padding-top: 3%;
+    padding-right: 5%;
+}
+
+nav ul {
+    display: none;
+}
+
+nav ul li {
+    width: 100%;
+}
+
+.hamburger div {
+    width: 10%;
+    height: 5px;
+    border-radius: 1px;
+    margin-bottom: 3px;
+    background-color: red;
+    position: relative;
+    left: 90%;
+}
+
+.social-media {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 1.5em;
+    color: var(--text-light);
+}
+
+.social-media a {
+    margin-right: 20px;
+}
+
+@media screen and (min-width: 900px) {
+    nav {
+        padding-top: 1%;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        display: inline-block;
+        width: auto;
+        padding: 0.5em 1em;
+        font-size: 1.3em;
+    }
+
+    nav ul li:last-of-type {
+        padding-right: 0;
+    }
+
+    nav ul li a:hover, .social-media i:hover {
+        color: var(--accent);
+        transition-duration: 0.7s;
+    }
+
+    #nav-selected {
+        border-bottom: 5px solid var(--accent);
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
