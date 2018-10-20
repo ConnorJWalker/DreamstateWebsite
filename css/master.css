@@ -37,13 +37,13 @@ nav ul li {
 }
 
 .hamburger div {
-    width: 10%;
+    width: 35px;
     height: 5px;
     border-radius: 1px;
     margin-bottom: 3px;
-    background-color: red;
+    background-color: var(--text-light);
     position: relative;
-    left: 90%;
+    left: 95%;
 }
 
 .social-media {

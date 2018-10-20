@@ -9,10 +9,11 @@ body {
     text-align: center;
     position: absolute;
     bottom: 49%;
+    width: 100%;
 }
 
 .title h1 {
-    font-size: 2.5em;
+    font-size: 3.5em;
     letter-spacing: 7px;
     display: inline;
 }
@@ -25,6 +26,7 @@ body {
 .title a {
     display: block;
     border: 1px solid var(--text-light);
+    margin-bottom: 10px;
 }
 
 .container {
@@ -35,6 +37,7 @@ body {
 @media screen and (min-width: 900px) {
     .title {
         left: 7%;
+        width: auto;
     }
 
     .title h1 {
