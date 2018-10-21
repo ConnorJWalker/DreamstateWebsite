@@ -1,4 +1,55 @@
-.new-album {
-    background-color: red;
+.new-album-mobile {
     height: 80vh;
+    width: 100%;
+    text-align: center;
+    padding-top: 20%;
+}
+
+.new-album-mobile img {
+    width: 80%;
+    height: auto;
+}
+
+.new-album-mobile h1 {
+    font-size: 3.2em;
+}
+
+.new-album-mobile h2 {
+    font-size: 2em;
+}
+
+.new-album {
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+    .new-album-mobile {
+        display: none;
+    }
+
+    .new-album {
+        display: flex;
+        max-height: 90vh;
+    }
+
+    .new-album img {
+        width: 45%;
+        height: 45%;
+        margin-left: 5%;
+    }
+
+    .new-album div {
+        padding-left: 3%;
+    }
+
+    .new-album h1 {
+        font-size: 5em;
+        letter-spacing: 10px;
+        margin-top: 40%;
+    }
+
+    .new-album h2 {
+        font-size: 3.5em;
+        letter-spacing: 5px;
+    }
 }
