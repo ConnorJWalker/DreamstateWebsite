@@ -2,7 +2,7 @@ body {
     background-image: url(../assets/indexcover.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: right;
 }
 
 .title {
@@ -35,6 +35,10 @@ body {
 }
 
 @media screen and (min-width: 900px) {
+    body {
+        background-position: center;
+    }
+
     .title {
         left: 7%;
         width: auto;
