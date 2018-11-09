@@ -3,6 +3,7 @@
     width: 100%;
     text-align: center;
     padding-top: 20%;
+    overflow: hidden;
 }
 
 .new-album-mobile img {
@@ -20,6 +21,24 @@
 
 .new-album {
     display: none;
+}
+
+.albums {
+    padding: 0 10px;
+}
+
+.albums div img {
+    width: 48%;
+    margin-top: 10px;
+}
+
+.albums div img:nth-child(2) {
+    float: right;
+}
+
+#custom-album {
+    display: block;
+    width: 100%;
 }
 
 @media screen and (min-width: 900px) {
