@@ -1,3 +1,7 @@
+a, i, h1 {
+    color: var(--text-light);
+}
+
 body {
     background-image: url(../assets/indexcover.jpg);
     background-repeat: no-repeat;
