@@ -27,6 +27,10 @@
     padding: 0 10px;
 }
 
+.albums h2 {
+    margin-top: 15px;
+}
+
 .albums div img {
     width: 48%;
     margin-top: 10px;
@@ -39,6 +43,10 @@
 #custom-album {
     display: block;
     width: 100%;
+}
+
+#modal {
+    display: none;
 }
 
 @media screen and (min-width: 900px) {
@@ -70,5 +78,28 @@
     .new-album h2 {
         font-size: 3.5em;
         letter-spacing: 5px;
+    }
+
+    #custom-album {
+        width: 49%;
+    }
+
+    .albums {
+        margin: 0 5% 25px;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .albums > div {
+        display: flex;
+    }
+
+    .albums-list {
+        width: 50%;
+        padding: 0 15px;
+    }
+
+    .albums-list img:hover {
+        cursor: pointer;
     }
 }
