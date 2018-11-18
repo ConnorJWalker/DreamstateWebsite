@@ -19,7 +19,15 @@ function init() {
         modal.addEventListener('click', () => modal.style.display = 'none')
     }
 
-    initAlbumModals()
+    //find out which page the user is on to init the right functions
+    switch(location.pathname) {
+        case '/store.html':
+            initStore()
+            break
+        case '/albums.html':
+            initAlbumModals()
+            break
+    }
 }
 
 function initStore() {
