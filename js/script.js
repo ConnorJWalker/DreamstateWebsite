@@ -1,4 +1,5 @@
 let navList, albumData, modal
+let store = {}
 
 window.onload = () => {
     document.querySelector('.hamburger').addEventListener('click', () => {
@@ -19,6 +20,15 @@ function init() {
     }
 
     initAlbumModals()
+}
+
+function initStore() {
+    store.clearTextBtn = document.getElementById('clear-text')
+    store.textInput = document.getElementById('shirt-text')
+
+    store.clearTextBtn.addEventListener('click', () => {
+        store.textInput.value = ''
+    })
 }
 
 function initAlbumModals() {
