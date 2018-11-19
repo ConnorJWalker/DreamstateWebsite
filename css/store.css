@@ -2,6 +2,10 @@
     padding: 0 25px;
 }
 
+.designs {
+    display: none;
+}
+
 button {
     padding: 3px 15px;
     border: none;
@@ -11,7 +15,7 @@ button {
     background-image: var(--gradient);
 }
 
-.custom-shirt > img {
+.custom-shirt canvas {
     width: 100%;
     height: auto;
 }

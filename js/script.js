@@ -5,13 +5,16 @@ class Customiser {
     constructor(canvas, textInput) {
         this.canvas = canvas
         this.context = canvas.getContext('2d')
-        this.width = canvas.width
-        this.height = canvas.height
+        this.size = canvas.width
         this.designs = [ //TODO: replace these with actual links
-            'shirt.png', 'link2', 'link3'
+            document.getElementById('design-1'), 'link2', 'link3'
         ]
         this.selectedDesign = 0
         this.textInput = textInput
+
+        this.canvas.height = this.canvas.width
+
+        this.render()
     }
 
     resize() {
@@ -25,6 +28,8 @@ class Customiser {
 
     render() {
         //TODO: clear the canvas and redraw it
+        const size = window.innerWidth < 900 ? this.canvas.width : this.canvas.height
+        this.context.drawImage(this.designs[this.selectedDesign], 0, 0, size, size)
     }
 }
 
@@ -60,7 +65,7 @@ function init() {
 function initStore() {
     store.clearTextBtn = document.getElementById('clear-text')
     store.textInput = document.getElementById('shirt-text')
-    store.custom = new Customiser(document.querySelector('canvas'))
+    store.custom = new Customiser(document.querySelector('canvas'), store.textInput)
 
     store.clearTextBtn.addEventListener('click', () => {
         store.textInput.value = ''
