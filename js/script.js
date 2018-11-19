@@ -1,6 +1,33 @@
 let navList, albumData, modal
 let store = {}
 
+class Customiser {
+    constructor(canvas, textInput) {
+        this.canvas = canvas
+        this.context = canvas.getContext('2d')
+        this.width = canvas.width
+        this.height = canvas.height
+        this.designs = [ //TODO: replace these with actual links
+            'shirt.png', 'link2', 'link3'
+        ]
+        this.selectedDesign = 0
+        this.textInput = textInput
+    }
+
+    resize() {
+        //TODO: update canvas sizes and redraw to smaller size
+    }
+
+    changeDesign(number) {
+        this.selectedDesign = number
+        this.render()
+    }
+
+    render() {
+        //TODO: clear the canvas and redraw it
+    }
+}
+
 window.onload = () => {
     document.querySelector('.hamburger').addEventListener('click', () => {
         const isShown = navList.style.display === 'block'
@@ -33,6 +60,7 @@ function init() {
 function initStore() {
     store.clearTextBtn = document.getElementById('clear-text')
     store.textInput = document.getElementById('shirt-text')
+    store.custom = new Customiser(document.querySelector('canvas'))
 
     store.clearTextBtn.addEventListener('click', () => {
         store.textInput.value = ''
