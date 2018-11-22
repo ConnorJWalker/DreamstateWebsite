@@ -34,7 +34,9 @@ class Customiser {
         this.context.drawImage(this.designs[this.selectedDesign], 0, 0, size, size)
 
         // Draw the users custom text
-        this.context.fillText(this.textInput.value, (this.size / 2) - (this.context.measureText(this.textInput.value).width / 2), this.size / 2)
+        const textX = (this.size / 2) - (this.context.measureText(this.textInput.value).width / 2)
+        const textY = this.size - ((this.size / 4) * 2.7)
+        this.context.fillText(this.textInput.value, textX, textY)
     }
 }
 
@@ -57,11 +59,12 @@ function init() {
     }
 
     //find out which page the user is on to init the right functions
-    switch(location.pathname) {
-        case '/store.html':
+    const path = location.pathname.split('/')
+    switch(path[path.length - 1]) {
+        case 'store.html':
             initStore()
             break
-        case '/albums.html':
+        case 'albums.html':
             initAlbumModals()
             break
     }
