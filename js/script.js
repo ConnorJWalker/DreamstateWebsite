@@ -28,8 +28,13 @@ class Customiser {
 
     render() {
         //TODO: clear the canvas and redraw it
+        this.context.clearRect(0, 0, this.size, this.size)
+
         const size = window.innerWidth < 900 ? this.canvas.width : this.canvas.height
         this.context.drawImage(this.designs[this.selectedDesign], 0, 0, size, size)
+
+        // Draw the users custom text
+        this.context.fillText(this.textInput.value, this.size / 2, this.size / 2)
     }
 }
 
@@ -69,7 +74,10 @@ function initStore() {
 
     store.clearTextBtn.addEventListener('click', () => {
         store.textInput.value = ''
+        store.custom.render()
     })
+
+    store.textInput.addEventListener('keyup', () => store.custom.render())
 }
 
 function initAlbumModals() {
