@@ -29,6 +29,11 @@ nav {
     padding-right: 5%;
 }
 
+/* #nav-selected {
+    border-right: solid 5px;
+    border-image: var(--gradient);
+} */
+
 nav ul {
     display: none;
 }
@@ -42,7 +47,7 @@ nav ul li {
     height: 5px;
     border-radius: 1px;
     margin-bottom: 3px;
-    background-color: var(--text-light);
+    background-color: var(--text-dark);
     position: relative;
     left: 95%;
 }
