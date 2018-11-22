@@ -34,7 +34,7 @@ class Customiser {
         this.context.drawImage(this.designs[this.selectedDesign], 0, 0, size, size)
 
         // Draw the users custom text
-        this.context.fillText(this.textInput.value, this.size / 2, this.size / 2)
+        this.context.fillText(this.textInput.value, (this.size / 2) - (this.context.measureText(this.textInput.value).width / 2), this.size / 2)
     }
 }
 
