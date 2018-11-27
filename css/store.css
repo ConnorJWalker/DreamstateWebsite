@@ -40,7 +40,7 @@ button {
     border-radius: 0 7px 7px 0;
     background-color: #F55C5C;
     background-image: none;
-    border: 1px solid #F55C5C;
+    border: 1px solid var(--text-dark);
 }
 
 .custom-shirt-input i {
