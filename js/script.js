@@ -7,12 +7,12 @@ class Customiser {
         this.context = canvas.getContext('2d')
         this.background = document.getElementById('background')
         this.size = canvas.width
-        this.designs = [ //TODO: replace these with actual links
+        this.designs = [
             document.getElementById('design-1'),
             document.getElementById('design-2'),
             document.getElementById('design-3')
         ]
-        this.selectedDesign = 0
+        this.selectedDesign = 1
         this.textInput = textInput
 
         this.canvas.height = this.canvas.width
