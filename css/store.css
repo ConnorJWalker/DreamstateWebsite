@@ -65,3 +65,30 @@ button {
 .shirt-designs img:nth-child(2) {
     float: right;
 }
+
+@media screen and (min-width: 900px) {
+    .custom-shirt canvas {
+        width: 30%;
+    }
+
+    #flex-container {
+        display: flex;
+    }
+
+    .custom-container {
+        width: 70%;
+        height: inherit;
+        justify-content: space-between;
+    }
+
+    .shirt-designs img {
+        width: 25%;
+        height: auto;
+        float: none !important;
+    }
+
+    .shirt-designs {
+        display: flex;
+        justify-content: space-between;
+    }
+}
