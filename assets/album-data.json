@@ -1,0 +1,82 @@
+{
+    "data": [
+        {
+            "title": "recovery",
+            "album-art": "recovery.png",
+            "songs": [
+                {
+                    "title": "white lies",
+                    "duration": "3:53"
+                },
+                {
+                    "title": "in this hell",
+                    "duration": "3:57"
+                },
+                {
+                    "title": "help myself",
+                    "duration": "3:34"
+                },
+                {
+                    "title": "solace",
+                    "duration": "4:02"
+                },
+                {
+                    "title": "new waves",
+                    "duration": "4:12"
+                }
+            ]
+        },
+        {
+            "title": "consequences",
+            "album-art": "consequences.jpg",
+            "songs": [
+                {
+                    "title": "burden",
+                    "duration": "4:00"
+                },
+                {
+                    "title": "burn them down",
+                    "duration": "4:14"
+                },
+                {
+                    "title": "burn them down",
+                    "duration": "4:14"
+                },
+                {
+                    "title": "try again",
+                    "duration": "3:40"
+                },
+                {
+                    "title": "relentless",
+                    "duration": "3:39"
+                },
+                {
+                    "title": "rebuild, recreate",
+                    "duration": "5:00"
+                }
+            ]
+        },
+        {
+            "title": "new waves",
+            "album-art": "inthishell.jpg",
+            "songs": [
+                {
+                    "title": "new waves",
+                    "duration": "4:12"
+                },
+                {
+                    "title": "change",
+                    "duration": "3:16"
+                },
+                {
+                    "title": "a place to rest my head",
+                    "duration": "3:06"
+                },
+                {
+                    "title":"white lies (acoustic)",
+                    "duration": "3:51"
+                }
+            ]
+        }
+    ]
+}
