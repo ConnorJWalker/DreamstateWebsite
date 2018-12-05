@@ -65,6 +65,8 @@ function init() {
 
     if (modal) {
         modal.addEventListener('click', () => modal.style.display = 'none')
+        document.getElementById('modal-close')
+            .addEventListener('click', () => modal.style.display = 'none')
     }
 
     //find out which page the user is on to init the right functions
@@ -98,18 +100,15 @@ function initStore() {
 
 function initAlbumModals() {
     document.querySelectorAll('.albums-list img').forEach(album => {
-        album.addEventListener('click', showModal)
+        album.addEventListener('click', () => showModal(album.dataset.index))
     })
 
     fetch('assets/album-data.json')
         .then(response => response.json())
-<<<<<<< HEAD
-        .then(data => albumData = data)
-=======
-        .then(data => { albumData = data; console.log(albumData) })
->>>>>>> b2860bdfc58a9cb53a51948b368537594920a855
+        .then(data => albumData = data.data)
 }
 
-function showModal() {
+function showModal(index) {
     modal.style.display = 'block'
+    document.getElementById('modal-title').innerText = albumData[index].title;
 }
