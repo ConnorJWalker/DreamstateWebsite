@@ -118,6 +118,10 @@ function showModal(index) {
         .content.querySelector('div')
     const songList = document.querySelector('.songs-list')
 
+    while (songList.firstChild) {
+        songList.removeChild(songList.firstChild)
+    }
+
     albumData[index].songs.forEach(song => {
         let clone = document.importNode(template, true)
         clone.children[0].innerText = song.title
