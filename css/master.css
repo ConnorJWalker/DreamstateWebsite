@@ -81,6 +81,7 @@ nav ul li {
     height: 75%;
     position: fixed;
     bottom: 15%;
+    overflow: hidden;
 }
 
 #modal header {

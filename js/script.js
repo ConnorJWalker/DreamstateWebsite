@@ -110,5 +110,18 @@ function initAlbumModals() {
 
 function showModal(index) {
     modal.style.display = 'block'
-    document.getElementById('modal-title').innerText = albumData[index].title;
+    document.getElementById('modal-title').innerText = albumData[index].title
+    console.log(albumData)
+    document.getElementById('modal-art').src = 'assets/' + albumData[index].albumArt
+
+    const template = document.getElementById('song-template')
+        .content.querySelector('div')
+    const songList = document.querySelector('.songs-list')
+
+    albumData[index].songs.forEach(song => {
+        let clone = document.importNode(template, true)
+        clone.children[0].innerText = song.title
+        clone.children[1].innerText = song.duration
+        songList.appendChild(clone);
+    })
 }

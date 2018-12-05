@@ -40,9 +40,27 @@
     float: right;
 }
 
+.modal-main {
+    overflow-y: scroll;
+    height: auto;
+}
+
 #custom-album {
     display: block;
     width: 100%;
+}
+
+#modal-art {
+    width:100%;
+    height: auto;
+}
+
+.songs-list div {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    text-transform: capitalize;
+    border-bottom: 1px var(--text-dark) solid;
 }
 
 @media screen and (min-width: 900px) {
