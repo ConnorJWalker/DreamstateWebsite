@@ -103,7 +103,11 @@ function initAlbumModals() {
 
     fetch('assets/album-data.json')
         .then(response => response.json())
+<<<<<<< HEAD
         .then(data => albumData = data)
+=======
+        .then(data => { albumData = data; console.log(albumData) })
+>>>>>>> b2860bdfc58a9cb53a51948b368537594920a855
 }
 
 function showModal() {
