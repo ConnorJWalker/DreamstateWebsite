@@ -100,6 +100,10 @@ function initAlbumModals() {
     document.querySelectorAll('.albums-list img').forEach(album => {
         album.addEventListener('click', showModal)
     })
+
+    fetch('assets/album-data.json')
+        .then(response => response.json())
+        .then(data => { albumData = data; console.log(albumData) })
 }
 
 function showModal() {
