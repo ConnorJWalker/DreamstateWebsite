@@ -2,7 +2,7 @@
     "data": [
         {
             "title": "recovery",
-            "album-art": "recovery.png",
+            "albumArt": "recovery.png",
             "songs": [
                 {
                     "title": "white lies",
@@ -28,7 +28,7 @@
         },
         {
             "title": "consequences",
-            "album-art": "consequences.jpg",
+            "albumArt": "consequences.jpg",
             "songs": [
                 {
                     "title": "burden",
@@ -58,7 +58,7 @@
         },
         {
             "title": "new waves",
-            "album-art": "inthishell.jpg",
+            "albumArt": "inthishell.jpg",
             "songs": [
                 {
                     "title": "new waves",
