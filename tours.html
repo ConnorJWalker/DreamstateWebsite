@@ -28,49 +28,13 @@
         <h1>Upcoming Tours</h1>
 
         <div class="tours-container">
-            <!-- TODO: replace with google maps API -->
-            <img src="assets/temp-map.PNG" alt="a picture of a map">
+            <div id="map"></div>
 
             <section class="tour-dates">
                 <header>
                     <h2>Tour Dates</h2>
                 </header>
                 <div class="venues">
-                    <div>
-                        <div class="tour-location">
-                            <h4>The Engine Shed</h4>
-                            <p>Lincoln</p>
-                        </div>
-                        <p>0.1 miles</p>
-                    </div>
-                    <div>
-                        <div class="tour-location">
-                            <h4>The Engine Shed</h4>
-                            <p>Lincoln</p>
-                        </div>
-                        <p>0.1 miles</p>
-                    </div>
-                    <div>
-                        <div class="tour-location">
-                            <h4>The Engine Shed</h4>
-                            <p>Lincoln</p>
-                        </div>
-                        <p>0.1 miles</p>
-                    </div>
-                    <div>
-                        <div class="tour-location">
-                            <h4>The Engine Shed</h4>
-                            <p>Lincoln</p>
-                        </div>
-                        <p>0.1 miles</p>
-                    </div>
-                    <div>
-                        <div class="tour-location">
-                            <h4>The Engine Shed</h4>
-                            <p>Lincoln</p>
-                        </div>
-                        <p>0.1 miles</p>
-                    </div>
                 </div>
             </section>
         </div>
@@ -87,5 +51,6 @@
     </template>
 
     <script src="js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAynIChK5Q1VntEFYmuS7zkQn0teWsTqwU&callback=initMap" async defer></script>
 </body>
 </html>
