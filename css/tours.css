@@ -1,0 +1,41 @@
+.container {
+    padding: 0 25px;
+}
+
+.tours-container img {
+    width: 100%;
+    height: auto;
+}
+
+.tour-dates {
+    border: 1px var(--text-dark) solid;
+    margin: 10px 0;
+}
+
+.tour-dates header, .tour-dates h2 {
+    background-image: var(--gradient);
+    color: var(--text-light);
+    padding: 5px;
+}
+
+.venues > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px var(--text-dark) solid;
+}
+
+.venues > div:last-of-type {
+    border-bottom: none;
+}
+
+.venues > div > p {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.8em;
+    line-height: calc(0.8em + 20px);
+}
+
+.tour-location p {
+    font-size: 0.8em;
+}
