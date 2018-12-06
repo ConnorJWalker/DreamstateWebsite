@@ -85,6 +85,7 @@ button {
 @media screen and (min-width: 900px) {
     .custom-shirt canvas {
         width: 30%;
+        margin-right: 10px;
     }
 
     #flex-container {
@@ -95,6 +96,10 @@ button {
         width: 70%;
         height: inherit;
         justify-content: space-between;
+    }
+
+    .custom-container h3 {
+        margin-top: 5%;
     }
 
     .shirt-designs img {
@@ -118,5 +123,10 @@ button {
 
     .shirt-details {
         display: flex;
+        justify-content: space-between;
+    }
+
+    .shirt-details button {
+        width: unset;
     }
 }
