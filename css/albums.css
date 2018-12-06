@@ -117,4 +117,26 @@
     .albums-list img:hover {
         cursor: pointer;
     }
+
+    #modal .body {
+        width: 55%;
+        max-width: 600px;
+        left: 25%;
+        height: auto;
+        bottom: unset;
+    }
+
+    #modal-art {
+        width: 45%;
+        height: auto;
+    }
+
+    .modal-main {
+        overflow: auto;
+        display: flex;
+    }
+
+    .songs-list {
+        width: 55%;
+    }
 }

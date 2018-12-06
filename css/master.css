@@ -90,6 +90,11 @@ nav ul li {
     justify-content: space-between;
     padding: 15px;
     border-bottom: 1px var(--text-dark) solid;
+    background-image: var(--gradient);
+}
+
+#modal header * {
+    color: var(--text-light);
 }
 
 #modal-close {

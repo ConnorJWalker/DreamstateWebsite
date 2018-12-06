@@ -103,6 +103,8 @@ function initAlbumModals() {
         album.addEventListener('click', () => showModal(album.dataset.index))
     })
 
+    window.addEventListener('resize', () => positionModal())
+
     fetch('assets/album-data.json')
         .then(response => response.json())
         .then(data => albumData = data.data)
@@ -111,7 +113,6 @@ function initAlbumModals() {
 function showModal(index) {
     modal.style.display = 'block'
     document.getElementById('modal-title').innerText = albumData[index].title
-    console.log(albumData)
     document.getElementById('modal-art').src = 'assets/' + albumData[index].albumArt
 
     const template = document.getElementById('song-template')
@@ -126,6 +127,16 @@ function showModal(index) {
         let clone = document.importNode(template, true)
         clone.children[0].innerText = song.title
         clone.children[1].innerText = song.duration
-        songList.appendChild(clone);
+        songList.appendChild(clone)
     })
+
+    positionModal()
+}
+
+function positionModal() {
+    if (modal.style.display === 'none' || window.innerWidth < 900) return
+    const left = (window.innerWidth - modal.children[0].clientWidth) / 2
+    const top = (window.innerHeight - modal.children[0].clientHeight) / 2
+    modal.children[0].style.left = left + 'px';
+    modal.children[0].style.top = top + 'px';
 }
