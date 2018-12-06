@@ -2,19 +2,35 @@
     "dates": [
         {
             "venue": "the engine shed",
-            "location": "lincoln"
+            "location": {
+                "name": "lincoln",
+                "longitude": "",
+                "latitude": ""
+            }
         },
         {
             "venue": "the corn exchange",
-            "location": "kings lynn"
+            "location": {
+                "name": "kings lynn",
+                "longitude": "",
+                "latitude": ""
+            }
         },
         {
             "venue": "manchester arena",
-            "location": "manchester"
+            "location": {
+                "name": "manchester",
+                "longitude": "",
+                "latitude": ""
+            }
         },
         {
             "venue": "02 arena",
-            "location": "london"
+            "location": {
+                "name": "london",
+                "longitude": "",
+                "latitude": ""
+            }
         }
     ]
 }
