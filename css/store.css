@@ -66,6 +66,22 @@ button {
     float: right;
 }
 
+.merch-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.merch-container > div {
+    flex-basis: 40%;
+}
+
+.shirt-details button {
+    width: 100%;
+    margin-top: 10px;
+}
+
 @media screen and (min-width: 900px) {
     .custom-shirt canvas {
         width: 30%;
@@ -90,5 +106,17 @@ button {
     .shirt-designs {
         display: flex;
         justify-content: space-between;
+    }
+
+    .merch-container img {
+        width: 100%;
+    }
+
+    .merch-container > div {
+        flex-basis: 30%;
+    }
+
+    .shirt-details {
+        display: flex;
     }
 }
