@@ -1,5 +1,25 @@
-let navList, albumData, modal
+let navList, albumData, modal, map
 let store = {}
+
+class Map {
+    constructor(location) {
+        this.mapElement = document.getElementById('map')
+        this.map = new google.maps.Map(this.mapElement, {
+            zoom: 10,
+            center: {
+                lat: location.coords.latitude,
+                lng: location.coords.longitude
+            }
+        })
+    }
+
+    static async getTourLocations() {
+        let data = await fetch('js/tours.json')
+        data = data.json()
+
+        return data;
+    }
+}
 
 class Customiser {
     constructor(canvas, textInput) {
@@ -78,7 +98,30 @@ function init() {
         case 'albums.html':
             initAlbumModals()
             break
+        case 'tours.html':
+            initTours()
+            break;
     }
+}
+
+async function initTours() {
+    const data = await Map.getTourLocations()
+
+    const template = document.getElementById('location-template')
+        .content.querySelector('div')
+    const toursList = document.querySelector('.venues')
+
+    data.dates.forEach(venue => {
+        let clone = document.importNode(template, true)
+
+        clone.children[0].children[0].innerText = venue.venue
+        clone.children[0].children[1].innerText = venue.location.name
+
+        // TODO: get actual distance
+        clone.children[1].innerText = '0.1 miles'
+
+        toursList.appendChild(clone)
+    })
 }
 
 function initStore() {
@@ -146,4 +189,22 @@ function positionModal() {
     const top = (window.innerHeight - modal.children[0].clientHeight) / 2
     modal.children[0].style.left = left + 'px';
     modal.children[0].style.top = top + 'px';
+}
+
+function initMap() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => map = new Map(position))
+    } else {
+        fallback()
+    }
+
+    function fallback() {
+        let postition = {
+            coords: {
+                longitude: 51.5074,
+                latitude: 0.1278
+            }
+        }
+        map = new Map(position)
+    }
 }
