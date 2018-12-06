@@ -1,0 +1,20 @@
+{
+    "dates": [
+        {
+            "venue": "the engine shed",
+            "location": "lincoln"
+        },
+        {
+            "venue": "the corn exchange",
+            "location": "kings lynn"
+        },
+        {
+            "venue": "manchester arena",
+            "location": "manchester"
+        },
+        {
+            "venue": "02 arena",
+            "location": "london"
+        }
+    ]
+}
