@@ -126,7 +126,7 @@ function showModal(index) {
     albumData[index].songs.forEach(song => {
         let clone = document.importNode(template, true)
         clone.children[0].innerText = song.title
-        clone.children[1].innerText = song.duration
+        clone.children[1].children[1].innerText = song.duration
         songList.appendChild(clone)
     })
 
@@ -134,7 +134,14 @@ function showModal(index) {
 }
 
 function positionModal() {
-    if (modal.style.display === 'none' || window.innerWidth < 900) return
+    if (window.innerWidth < 900) {
+        modal.children[0].style.left = null
+        modal.children[0].style.top = null
+        modal.children[0].style.bottom = '15%'
+
+        return
+    }
+
     const left = (window.innerWidth - modal.children[0].clientWidth) / 2
     const top = (window.innerHeight - modal.children[0].clientHeight) / 2
     modal.children[0].style.left = left + 'px';
