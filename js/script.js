@@ -19,6 +19,18 @@ class Map {
 
         return data;
     }
+
+    addMarkers(locations) {
+        locations.forEach(location => {
+            new google.maps.Marker({
+                position: {
+                    lat: parseFloat(location.location.latitude),
+                    lng: parseFloat(location.location.longitude)
+                },
+                map: map.map
+            })
+        })
+    }
 }
 
 class Customiser {
@@ -98,9 +110,9 @@ function init() {
         case 'albums.html':
             initAlbumModals()
             break
-        case 'tours.html':
-            initTours()
-            break;
+        // case 'tours.html':
+        //     initTours()
+        //     break;
     }
 }
 
@@ -122,6 +134,8 @@ async function initTours() {
 
         toursList.appendChild(clone)
     })
+
+    map.addMarkers(data.dates)
 }
 
 function initStore() {
@@ -193,7 +207,10 @@ function positionModal() {
 
 function initMap() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => map = new Map(position))
+        navigator.geolocation.getCurrentPosition(position => {
+            map = new Map(position)
+            initTours()
+        })
     } else {
         fallback()
     }
@@ -206,5 +223,6 @@ function initMap() {
             }
         }
         map = new Map(position)
+        initTours()
     }
 }

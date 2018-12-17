@@ -13,7 +13,7 @@ h1 {
 
 .tour-dates {
     border: 1px var(--text-dark) solid;
-    marg in: 10px 0;
+    margin: 10px 0;
 }
 
 .tour-dates header, .tour-dates h2 {
@@ -58,5 +58,6 @@ h1 {
 
     .tour-dates {
         width: 30%;
+        margin: 0;
     }
 }

@@ -4,32 +4,32 @@
             "venue": "the engine shed",
             "location": {
                 "name": "lincoln",
-                "longitude": "",
-                "latitude": ""
+                "longitude": "-0.5464444",
+                "latitude": "53.2268559"
             }
         },
         {
             "venue": "the corn exchange",
             "location": {
                 "name": "kings lynn",
-                "longitude": "",
-                "latitude": ""
+                "longitude": "0.391288",
+                "latitude": "52.7564338"
             }
         },
         {
             "venue": "manchester arena",
             "location": {
                 "name": "manchester",
-                "longitude": "",
-                "latitude": ""
+                "longitude": "-2.2458508",
+                "latitude": "53.4880988"
             }
         },
         {
             "venue": "02 arena",
             "location": {
                 "name": "london",
-                "longitude": "",
-                "latitude": ""
+                "longitude": "0.001249,17",
+                "latitude": "51.5029727"
             }
         }
     ]
