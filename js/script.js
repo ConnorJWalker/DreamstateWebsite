@@ -52,26 +52,23 @@ class Customiser {
         this.render()
     }
 
-    resize() {
-        //TODO: update canvas sizes and redraw to smaller size
-    }
-
     changeDesign(number) {
         this.selectedDesign = number
         this.render()
     }
 
     render() {
-        //TODO: clear the canvas and redraw it
+        // Clear the canvas ready to redraw
         this.context.clearRect(0, 0, this.size, this.size)
 
+        // Draw the background depending on the window size
         let size = window.innerWidth < 900 ? this.canvas.width : this.canvas.height
         this.context.drawImage(this.background, 0, 0, size, size)
 
+        // Set the size of the of the designs and draw them
         size /= 4
         const imgX = ((this.size) - (size)) / 2
         const imgY = (this.size / 2) - (size / 2)
-        console.log(imgX)
         this.context.drawImage(this.designs[this.selectedDesign], imgX, imgY, size, size)
 
         // Draw the users custom text
@@ -101,7 +98,7 @@ function init() {
             .addEventListener('click', () => modal.style.display = 'none')
     }
 
-    //find out which page the user is on to init the right functions
+    // Find out which page the user is on to init the right functions
     const path = location.pathname.split('/')
     switch(path[path.length - 1]) {
         case 'store.html':
@@ -110,9 +107,6 @@ function init() {
         case 'albums.html':
             initAlbumModals()
             break
-        // case 'tours.html':
-        //     initTours()
-        //     break;
     }
 }
 
@@ -176,6 +170,7 @@ function showModal(index) {
         .content.querySelector('div')
     const songList = document.querySelector('.songs-list')
 
+    // Remove elements ready to re-add them
     while (songList.firstChild) {
         songList.removeChild(songList.firstChild)
     }
