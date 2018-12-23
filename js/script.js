@@ -55,7 +55,31 @@ class Map {
     }
 
     orderArrayByDistance(data) {
-        
+        // Structure array in way get distance function needs
+        let functionData = data.dates.map(location => ({
+            lat: location.location.latitude,
+            lng: location.location.longitude
+        }))
+
+        // Get and sort the distances
+        const distances = this.getDistanceBetweenPoints(this.userLatLng, functionData)
+        const sortedDistances = [...distances].sort((a, b) => {
+            a = parseFloat(a)
+            b = parseFloat(b)
+
+            // Return data specified by MDN for sort function parameter
+            if (a < b) return -1
+            else if (a > b) return 1
+            else return 0
+        })
+
+        let returnData = []
+        for (let i = 0; i < sortedDistances.length; i++) {
+            returnData.push(data.dates[distances.indexOf(sortedDistances[i])])
+            returnData[i].distance = sortedDistances[i]
+        }
+
+        return returnData
     }
 }
 
@@ -143,7 +167,7 @@ async function initTours() {
         .content.querySelector('div')
     const toursList = document.querySelector('.venues')
 
-    console.log(map.getDistanceBetweenPoints(map.userLatLng, [{lat: data.dates[0].location.latitude, lng: data.dates[0].location.longitude}]))
+    console.log(map.orderArrayByDistance(data))
 
     data.dates.forEach(venue => {
         let clone = document.importNode(template, true)
