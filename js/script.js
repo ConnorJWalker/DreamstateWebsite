@@ -223,7 +223,7 @@ function initAlbumModals() {
 
     window.addEventListener('resize', () => positionModal())
 
-    fetch('assets/album-data.json')
+    fetch('js/album-data.json')
         .then(response => response.json())
         .then(data => albumData = data.data)
 }
