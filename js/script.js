@@ -149,7 +149,9 @@ function init() {
     modal = document.getElementById('modal')
 
     if (modal) {
-        modal.addEventListener('click', () => modal.style.display = 'none')
+        window.addEventListener('click', e => {
+            if (e.target == modal) modal.style.display = 'none'
+        })
         document.getElementById('modal-close')
             .addEventListener('click', () => modal.style.display = 'none')
     }
