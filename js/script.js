@@ -81,6 +81,12 @@ class Map {
 
         return returnData
     }
+
+    moveToMarker(e) {
+        let data = e.target.dataset
+        const latLng = new google.maps.LatLng(data.lat, data.long)
+        this.map.panTo(latLng)
+    }
 }
 
 class Customiser {
@@ -175,12 +181,19 @@ async function initTours() {
         clone.children[0].children[0].innerText = venue.venue
         clone.children[0].children[1].innerText = venue.location.name
 
+        clone.setAttribute('data-lat', venue.location.latitude)
+        clone.setAttribute('data-long', venue.location.longitude.replace(',', ''))
+
         let splitDist = venue.distance.toString().split('.')
         clone.children[1].innerText = `${splitDist[0]}.${splitDist[0][0]} miles`
 
         toursList.appendChild(clone)
     })
 
+    // Add event listeners to the new elements
+    for (let i = 0; i < toursList.children.length; i++) {
+        toursList.children[i].addEventListener('click', e => map.moveToMarker(e))
+    }
     map.addMarkers(data.dates)
 }
 
