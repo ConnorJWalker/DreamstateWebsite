@@ -11,6 +11,10 @@ class Map {
                 lng: location.coords.longitude
             }
         })
+        this.userLatLng = {
+            lat: location.coords.latitude,
+            lng: location.coords.longitude
+        }
     }
 
     static async getTourLocations() {
@@ -30,6 +34,28 @@ class Map {
                 map: map.map
             })
         })
+    }
+
+    getDistanceBetweenPoints(start, end) {
+        let distances = []
+
+        start = new google.maps.LatLng(start)
+
+        end.forEach(point => {
+            point.lat = parseFloat(point.lat)
+            point.lng = parseFloat(point.lng)
+
+            point = new google.maps.LatLng(point)
+            const distanceMeters = google.maps.geometry.spherical.computeDistanceBetween(start, point)
+            // Convert the distance into miles
+            distances.push(distanceMeters * 0.000621371192)
+        })
+
+        return distances
+    }
+
+    orderArrayByDistance(data) {
+        
     }
 }
 
@@ -116,6 +142,8 @@ async function initTours() {
     const template = document.getElementById('location-template')
         .content.querySelector('div')
     const toursList = document.querySelector('.venues')
+
+    console.log(map.getDistanceBetweenPoints(map.userLatLng, [{lat: data.dates[0].location.latitude, lng: data.dates[0].location.longitude}]))
 
     data.dates.forEach(venue => {
         let clone = document.importNode(template, true)
