@@ -167,16 +167,16 @@ async function initTours() {
         .content.querySelector('div')
     const toursList = document.querySelector('.venues')
 
-    console.log(map.orderArrayByDistance(data))
+    const sorted = map.orderArrayByDistance(data)
 
-    data.dates.forEach(venue => {
+    sorted.forEach(venue => {
         let clone = document.importNode(template, true)
 
         clone.children[0].children[0].innerText = venue.venue
         clone.children[0].children[1].innerText = venue.location.name
 
-        // TODO: get actual distance
-        clone.children[1].innerText = '0.1 miles'
+        let splitDist = venue.distance.toString().split('.')
+        clone.children[1].innerText = `${splitDist[0]}.${splitDist[0][0]} miles`
 
         toursList.appendChild(clone)
     })
