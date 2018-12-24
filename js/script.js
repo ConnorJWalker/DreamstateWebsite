@@ -134,6 +134,7 @@ function positionModal() {
     modal.children[0].style.top = top + 'px';
 }
 
+// TODO: update so map gets inited before user set location, then reset data for location after
 function initMap() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
