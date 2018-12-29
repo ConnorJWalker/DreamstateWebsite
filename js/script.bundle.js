@@ -27,12 +27,21 @@ class Cart {
 
         shirt.name = target.previousElementSibling.children[0].innerText
 
-        shirt.price = target.previousElementSibling.children[1].innerText
-        shirt.price = parseFloat(shirt.price.replace('£', ''))
+        const index = this.store.shirts.findIndex(s => {
+            return s.name === shirt.name
+        })
 
-        shirt.img = target.parentElement.previousElementSibling.src
+        // Index will be -1 if it was not found
+        if (index === -1) {
+            shirt.price = target.previousElementSibling.children[1].innerText
+            shirt.price = parseFloat(shirt.price.replace('£', ''))
+            shirt.img = target.parentElement.previousElementSibling.src
+            shirt.quantity = 1
 
-        this.store.shirts.unshift(shirt)
+            this.store.shirts.unshift(shirt)
+        } else {
+            this.store.shirts[index].quantity++
+        }
 
         this.save()
     }
