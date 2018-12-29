@@ -2,13 +2,6 @@ a, i, h1 {
     color: var(--text-light);
 }
 
-body {
-    background-image: url(../assets/indexcover.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
-}
-
 .hamburger div {
     background-color: var(--text-light);
 }
@@ -39,7 +32,17 @@ body {
 
 .container {
     height: 100vh;
+}
+
+.container.background-img {
     background-color: rgba(0, 0, 0, 0.55);
+}
+
+body.background-img {
+    background-image: url(../assets/indexcover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
 }
 
 @media screen and (min-width: 900px) {

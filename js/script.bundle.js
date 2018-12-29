@@ -1,3 +1,4 @@
+/*--- cart.js ---*/
 class Cart {
     constructor() {
         let storage = localStorage.getItem('cart')
@@ -43,6 +44,7 @@ class Cart {
         localStorage.setItem('cart', JSON.stringify(this.store))
     }
 }
+/*--- customiser.js ---*/
 class Customiser {
     constructor(canvas, textInput) {
         this.canvas = canvas
@@ -88,6 +90,7 @@ class Customiser {
     }
 }
 
+/*--- map.js ---*/
 class Map {
     constructor(location) {
         this.mapElement = document.getElementById('map')

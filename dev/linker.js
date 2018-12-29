@@ -16,7 +16,7 @@ const fs = require('fs');
     
     files.forEach(file => {
         if (file !== 'script.js')
-            contents.push(fs.readFileSync('js/' + file, 'utf8'))
+            contents.push(`/*--- ${file} ---*/\n` + fs.readFileSync('js/' + file, 'utf8'))
         else
             finalFile = fs.readFileSync('js/' + file, 'utf8')
     })
@@ -26,20 +26,20 @@ const fs = require('fs');
 }());
 
 // Read css files
-(function() {
-    let files = fs.readdirSync('css/')
+// (function() {
+//     let files = fs.readdirSync('css/')
     
-    let contents = []
+//     let contents = []
     
-    files.forEach(file => {
-        if (file !== 'master.css')
-            contents.push(fs.readFileSync('css/' + file, 'utf8'))
-        else
-            contents.unshift(fs.readFileSync('css/' + file, 'utf8'))
-    })
+//     files.forEach(file => {
+//         if (file !== 'master.css')
+//             contents.push(`/*--- ${file} ---*/\n` + fs.readFileSync('css/' + file, 'utf8'))
+//         else
+//             contents.unshift(`/*--- ${file} ---*/\n` + fs.readFileSync('css/' + file, 'utf8'))
+//     })
     
-    createNewFile(contents, 'css')
-}());
+//     createNewFile(contents, 'css')
+// }());
 
 
 /**
@@ -52,5 +52,12 @@ function createNewFile(files, type) {
     files.forEach(file => fileData += file + '\n')
 
     const dir = type === 'js' ? 'js/script.bundle.js' : 'css/styles.bundle.css'
-    fs.writeFileSync(dir, fileData + '\n', 'utf8')
+    fs.unlink(dir, err => {
+        if (err && err.errno !== -4058) {
+            console.error(err)
+        } else {
+            console.info('Writing to file: ' + dir)
+            fs.writeFileSync(dir, fileData + '\n', 'utf8')
+        }
+    })
 }
