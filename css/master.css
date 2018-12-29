@@ -30,17 +30,30 @@ nav {
     padding-right: 5%;
 }
 
-/* #nav-selected {
-    border-right: solid 5px;
-    border-image: var(--gradient);
-} */
-
 nav ul {
     display: none;
 }
 
 nav ul li {
     width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 300px;
+    text-align: left;
+}
+
+.spacer { height: 10px; }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-list {
+    padding: 10px 0;
+    background-color: var(--text-light);
 }
 
 .hamburger div {
@@ -100,6 +113,14 @@ nav ul li {
 
 #modal-close {
     cursor: pointer;
+}
+
+.background-gradient {
+    background-image: var(--gradient);
+}
+
+.background-gradient * { 
+    color: var(--text-light);
 }
 
 @media screen and (min-width: 900px) {
