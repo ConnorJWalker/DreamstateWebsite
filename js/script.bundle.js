@@ -21,6 +21,22 @@ class Cart {
         this.save()
     }
 
+    addShirt(event) {
+        const target = event.target
+        let shirt = {}
+
+        shirt.name = target.previousElementSibling.children[0].innerText
+
+        shirt.price = target.previousElementSibling.children[1].innerText
+        shirt.price = parseFloat(shirt.price.replace('£', ''))
+
+        shirt.img = target.parentElement.previousElementSibling.src
+
+        this.store.shirts.unshift(shirt)
+
+        this.save()
+    }
+
     createCartObject() {
         this.store = {
             customShirts: [],
@@ -178,7 +194,7 @@ class Map {
         this.map.panTo(latLng)
     }
 }
-let navList, albumData, modal, map
+let navList, albumData, modal, map, cart
 let store = {}
 
 window.onload = () => {
@@ -188,6 +204,7 @@ window.onload = () => {
     })
 
     navList = document.querySelector('nav ul')
+    cart = new Cart()
 
     init()
 }
@@ -258,8 +275,14 @@ function initStore() {
 
     store.textInput.addEventListener('keyup', () => store.custom.render())
 
+    // Click event listener for custom shirt editor designs
     document.querySelectorAll('.shirt-designs img').forEach(img => {
         img.addEventListener('click', e => store.custom.changeDesign(e.target.dataset.index))
+    })
+
+    // CLick event listener for Merch add to cart buttons
+    document.querySelectorAll('.merch button').forEach(button => {
+        button.addEventListener('click', e => cart.addShirt(e))
     })
 }
 

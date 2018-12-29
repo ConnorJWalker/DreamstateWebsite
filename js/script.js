@@ -1,4 +1,4 @@
-let navList, albumData, modal, map
+let navList, albumData, modal, map, cart
 let store = {}
 
 window.onload = () => {
@@ -8,6 +8,7 @@ window.onload = () => {
     })
 
     navList = document.querySelector('nav ul')
+    cart = new Cart()
 
     init()
 }
@@ -78,8 +79,14 @@ function initStore() {
 
     store.textInput.addEventListener('keyup', () => store.custom.render())
 
+    // Click event listener for custom shirt editor designs
     document.querySelectorAll('.shirt-designs img').forEach(img => {
         img.addEventListener('click', e => store.custom.changeDesign(e.target.dataset.index))
+    })
+
+    // CLick event listener for Merch add to cart buttons
+    document.querySelectorAll('.merch button').forEach(button => {
+        button.addEventListener('click', e => cart.addShirt(e))
     })
 }
 

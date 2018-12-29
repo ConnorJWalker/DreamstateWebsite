@@ -20,6 +20,22 @@ class Cart {
         this.save()
     }
 
+    addShirt(event) {
+        const target = event.target
+        let shirt = {}
+
+        shirt.name = target.previousElementSibling.children[0].innerText
+
+        shirt.price = target.previousElementSibling.children[1].innerText
+        shirt.price = parseFloat(shirt.price.replace('£', ''))
+
+        shirt.img = target.parentElement.previousElementSibling.src
+
+        this.store.shirts.unshift(shirt)
+
+        this.save()
+    }
+
     createCartObject() {
         this.store = {
             customShirts: [],
