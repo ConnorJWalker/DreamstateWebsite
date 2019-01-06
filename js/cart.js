@@ -8,6 +8,8 @@ class Cart {
         } else {
             this.createCartObject()
         }
+
+        this.renderCart()
     }
 
     addCustomShirt(shirt) {
@@ -64,7 +66,32 @@ class Cart {
         }
     }
 
+    renderCart() {
+        let dropdown = document.querySelector('.dropdown-list')
+
+        this.store.shirts.forEach(shirt => {
+            dropdown.innerHTML += this.getCartItemLayout(shirt)
+        })
+    }
+
     save() {
         localStorage.setItem('cart', JSON.stringify(this.store))
     }
+
+    getCartItemLayout(shirt) {
+        return `
+            <div class="cart-item-shirt">
+                <div title="${shirt.name} ${shirt.price}" class="cart-item-img">
+                    <img src="${shirt.img}" alt="${shirt.name}">
+                    <p>£${shirt.price}</p>
+                </div>
+                <div class="cart-item-remove">
+                    <span class="cart-quantity">X${shirt.quantity}</span>
+                    <button class="cart-remove-item" data-shirtName="${shirt.name}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `
+    } 
 }
