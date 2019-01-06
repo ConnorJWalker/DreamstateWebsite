@@ -69,8 +69,37 @@ class Cart {
     renderCart() {
         let dropdown = document.querySelector('.dropdown-list')
 
+        // remove any items already in the cart so they can be re rendered
+        for (let i = dropdown.children.length - 1; i >= 0; i--) {
+            dropdown.children[i].remove();
+        }
+
         this.store.shirts.forEach(shirt => {
             dropdown.innerHTML += this.getCartItemLayout(shirt)
+        })
+
+        // Add event listeners to all of the cart remove buttons
+        document.querySelectorAll('.cart-remove-item').forEach(button => {
+            button.addEventListener('click', e => this.removeFromCart(e))
+        })
+    }
+
+    removeFromCart(e) {
+        const shirtName = e.target.dataset.shirtname
+
+        this.store.shirts.forEach(shirt => {
+            if (shirt.name !== shirtName) return
+
+            // If there is more than one shirt in the cart, reduce quantity, else remove element
+            if (shirt.quantity > 1) {
+                shirt.quantity--
+            } else {
+                this.store.shirts.splice(this.store.shirts.indexOf(shirt, 1))
+            }
+
+            // Rerender the new cart
+            this.renderCart();
+            this.save();
         })
     }
 
