@@ -80,6 +80,14 @@ class Map {
     }
 
     moveToMarker(e) {
+        if (!e.target.dataset.lat)
+        {
+            // if the user clicks the text it wont have the dataset
+            // this prevents this from causing a crash
+            this.moveToMarker({ target: e.target.parentElement })
+            return
+        }
+
         let data = e.target.dataset
         const latLng = new google.maps.LatLng(data.lat, data.long)
         this.map.panTo(latLng)
