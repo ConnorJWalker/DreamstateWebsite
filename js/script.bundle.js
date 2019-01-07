@@ -419,17 +419,18 @@ function initMap() {
         navigator.geolocation.getCurrentPosition(position => {
             map = new Map(position)
             initTours()
-        })
+        }, fallback())
     } else {
         fallback()
     }
 
     function fallback() {
-        let postition = {
+        let position = {
             coords: {
-                longitude: 51.5074,
-                latitude: 0.1278
+                longitude: 0.1278,
+                latitude: 51.5074
             }
+            
         }
         map = new Map(position)
         initTours()
