@@ -137,6 +137,7 @@
         left: 25%;
         height: auto;
         bottom: unset;
+        box-shadow: 6px 6px 20px 0px rgba(62,97,86,0.69);
     }
 
     #modal-art {
