@@ -287,6 +287,11 @@ window.onload = () => {
         navList.style.display = isShown ? 'none' : 'block'
     })
 
+    window.addEventListener('resize', () => {
+        if (window.innerHeight > 900)
+            document.querySelector('nav ul').style.display = 'block'
+    })
+
     navList = document.querySelector('nav ul')
     cart = new Cart()
 
