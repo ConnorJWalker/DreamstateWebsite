@@ -72,13 +72,13 @@ class Cart {
         let totalPrice = 0
 
         if (this.store.shirts.length === 0) {
-            dropdown.innerHTML += "<p>You have nothing in your cart :(</p>"
+            dropdown.innerHTML = "<p>You have nothing in your cart :(</p>"
             document.getElementById('dropdown-price').innerText = '0.00'
             return
         }
 
         // remove any items already in the cart so they can be re rendered
-        for (let i = dropdown.children.length - 1; i >= 0; i--) {
+        for (let i = dropdown.children.length - 1; i > 0; i--) {
             dropdown.children[i].remove();
         }
 
