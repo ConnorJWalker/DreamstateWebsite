@@ -69,9 +69,11 @@ class Cart {
 
     renderCart() {
         let dropdown = document.querySelector('.dropdown-list')
+        let totalPrice = 0
 
         if (this.store.shirts.length === 0) {
             dropdown.innerHTML += "<p>You have nothing in your cart :(</p>"
+            document.getElementById('dropdown-price').innerText = '0.00'
             return
         }
 
@@ -82,7 +84,10 @@ class Cart {
 
         this.store.shirts.forEach(shirt => {
             dropdown.innerHTML += this.getCartItemLayout(shirt)
-        })
+            totalPrice += shirt.price * shirt.quantity
+        }) 
+
+        document.getElementById('dropdown-price').innerText = totalPrice
 
         // Add event listeners to all of the cart remove buttons
         document.querySelectorAll('.cart-remove-item').forEach(button => {
