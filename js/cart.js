@@ -127,7 +127,7 @@ class Cart {
                 </div>
                 <div class="cart-item-remove">
                     <span class="cart-quantity">X${shirt.quantity}</span>
-                    <button class="cart-remove-item" data-shirtName="${shirt.name}">
+                    <button class="cart-remove-item blue" data-shirtName="${shirt.name}">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
