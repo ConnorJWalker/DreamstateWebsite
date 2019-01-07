@@ -45,6 +45,7 @@ class Cart {
             this.store.shirts[index].quantity++
         }
 
+        this.renderCart()
         this.save()
     }
 
