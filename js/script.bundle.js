@@ -314,6 +314,8 @@ async function initTours() {
     const template = document.getElementById('location-template')
         .content.querySelector('div')
     const toursList = document.querySelector('.venues')
+    toursList.innerHTML = ''
+
 
     const sorted = map.orderArrayByDistance(data)
 
