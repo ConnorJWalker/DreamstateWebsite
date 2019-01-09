@@ -37,9 +37,9 @@ body, html {
 }
 
 .border.no-right, .border-light.no-right   { border-right:  none; }
-.border.no-left,  .border-light.no-right   { border-left:   none; }
-.border.no-top,   .border-light.no-right   { border-top:    none; }
-.border.no-right, .border-light.no-right   { border-bottom: none; }
+.border.no-left,  .border-light.no-left    { border-left:   none; }
+.border.no-top,   .border-light.no-top     { border-top:    none; }
+.border.no-bottom, .border-light.no-bottom { border-bottom: none; }
 
 .clickable {
     cursor: pointer;
