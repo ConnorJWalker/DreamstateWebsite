@@ -61,7 +61,7 @@ h1.display-title, h2.display-title {
 }
 
 h2.display-title {
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 .flex-between {
@@ -228,6 +228,41 @@ body.background-img{
     margin-bottom: 10px;
 }
 
+/**** Albums Styles ****/
+
+.new-album-mobile h1, .new-album-mobile h2 {
+    letter-spacing: unset !important;
+}
+
+.new-album-mobile img {
+    width: 90%;
+    height: auto;
+}
+
+.new-album-mobile {
+    text-align: center;
+}
+
+.new-album {
+    display: none;
+}
+
+#custom-album {
+    width: 100%;
+    height: auto;
+}
+
+.albums-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.albums-list img {
+    width: 100%;
+    flex: 0 49%;
+}
+
 /**** Updated styles for destop devices ****/
 @media screen and (min-width: 900px) {
     /**** Updated helper function for desktop devices ****/
@@ -240,7 +275,7 @@ body.background-img{
     }
 
     h2.display-title {
-        font-size: 5em;
+        font-size: 3.5em;
     }
 
     /**** Desktop Navbar ****/
@@ -316,6 +351,40 @@ body.background-img{
 
     .tour-dates {
         width: 30%;
+    }
+
+    /**** Albums Page ****/
+    .new-album-mobile {
+        display: none;
+    }
+
+    .new-album {
+        display: flex;
+        max-height: 90vh;
+    }
+
+    .new-album img {
+        width: 48%;
+        height: auto;
+    }
+
+    .new-album div {
+        padding-top: 15%;
+        padding-left: 25px;
+    }
+
+    .albums-list {
+        width: 49%;
+    }
+
+    .albums > div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #custom-album {
+        width: 49%;
+        height: auto;
     }
 }
 
