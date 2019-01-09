@@ -64,6 +64,11 @@ h2.display-title {
     font-size: 2em;
 }
 
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
 /**** Container Styles ****/
 
 .container {
@@ -200,6 +205,29 @@ body.background-img{
     margin-right: 20px;
 }
 
+/**** Tours Page Styles ****/
+.venues > div {
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.venues > div > p {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.8em;
+    line-height: calc(0.8em + 20px);
+}
+
+.venues > div:hover {
+    background-color: #ddd;
+}
+
+#map {
+    width: 100%;
+    height: 40vh;
+    margin-bottom: 10px;
+}
+
 /**** Updated styles for destop devices ****/
 @media screen and (min-width: 900px) {
     /**** Updated helper function for desktop devices ****/
@@ -273,6 +301,21 @@ body.background-img{
     .title a {
         width: 49%;
         padding: 7px 0;
+    }
+
+    /**** Maps Page ****/
+    .tours-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #map {
+        width: 65%;
+        height: 65vh;
+    }
+
+    .tour-dates {
+        width: 30%;
     }
 }
 
