@@ -67,33 +67,89 @@ h2.display-title {
 /**** Container Styles ****/
 
 .container {
-    padding: 0 25px;    
+    padding: 5px 25px 0;
 }
 
 /**** Navbar Styles ****/
 
-nav {
-    padding: 1.5% 5% 5% 0;
-    position: sticky;
-    display: flex;
+#nav-selected {
+    border-right: 5px var(--accent) solid;
+    padding-right: 2px;
 }
 
-nav .nav-left {
-    width: 10%;
+.hamburger {
+    float: right;
 }
 
-nav .nav-right {
-    font-size: 1.3em;
-    width: 90%;
+.hamburger div {
+    width: 35px;
+    height: 5px;
+    background-color: var(--text-dark);
+    margin-bottom: 3px;
+}
+
+#hamburger-light div {
+    background-color: var(--text-light);
+}
+
+.nav-right {
+    position: absolute;
+    top: calc(8px * 3 + 5px);
+    left: 0;
+    right: 25px;
+}
+
+.nav-right a {
+    display: block;
+    width: 100%;
     text-align: right;
-} 
-
-nav .nav-right a {
-    margin: 0.5em 1em;
+    padding-right: 7px;
 }
 
-nav .nav-right a:last-of-type {
-    margin-right: 0;
+/**** Cart Styles ****/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 300px;
+    text-align: left;
+}
+
+.spacer { height: 10px; }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-list {
+    padding: 10px 0;
+    background-color: var(--text-light);
+}
+
+.dropdown-list * {
+    color: var(--text-dark) !important;
+}
+
+.dropdown-list .cart-item-shirt, .cart-item-remove {
+    display: flex;
+    padding: 0 5px;
+}
+
+.cart-item-remove * {
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+.cart-item-remove button {
+    padding: 0 3px;
+}
+
+.dropdown-list .cart-item-shirt img {
+    width: 2em;
+    height: 2em;
+}
+
+.cart-item-img {
+    width: 75%;
 }
 
 /**** Index Page Styles ****/
@@ -150,13 +206,51 @@ body.background-img{
     h1.sub-title {
         font-size: 3.5em;
     }
-    
+
     h1.display-title, h2.display-title {
         font-size: 7.5em;
     }
-    
+
     h2.display-title {
         font-size: 5em;
+    }
+
+    /**** Desktop Navbar ****/
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        padding: 1.5% 5% 5% 0;
+        position: sticky;
+        display: flex;
+    }
+
+    nav .nav-left {
+        width: 10%;
+    }
+
+    nav .nav-right {
+        font-size: 1.3em;
+        width: 90%;
+        text-align: right;
+        position: unset;
+    }
+
+    nav .nav-right a {
+        margin: 0.4em 1em;
+        width: auto;
+        display: inline;
+        text-align: left;
+    }
+
+    nav .nav-right a:last-of-type {
+        margin-right: 0;
+    }
+
+    #nav-selected {
+        border-bottom: 5px solid var(--accent);
+        border-right: none;
     }
 
     /**** Index Page ****/
