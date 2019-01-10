@@ -306,14 +306,21 @@ body.background-img{
     height: auto;
 }
 
+.albums > div {
+    height: 50%;
+    overflow-y: hidden;
+}
+
 .albums-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    height: inherit;
 }
 
 .albums-list img {
     width: 100%;
+    height: 50%;
     flex: 0 49%;
 }
 
@@ -484,7 +491,7 @@ body.background-img{
 
     .new-album img {
         width: 48%;
-        height: auto;
+        height: 48%;
     }
 
     .new-album div {
@@ -504,7 +511,7 @@ body.background-img{
 
     #custom-album {
         width: 49%;
-        height: auto;
+        height: 49%;
     }
 
     #modal .body {
