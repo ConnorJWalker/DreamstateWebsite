@@ -151,6 +151,7 @@ h2.display-title {
 
 .nav-right {
     position: absolute;
+    z-index: 2000;
     top: calc(8px * 3 + 5px);
     left: 0;
     right: 25px;
