@@ -13,13 +13,15 @@ class Cart {
         this.renderCart()
     }
 
-    addCustomShirt(shirt) {
-        this.store.customShirts.push({
-            img: shirt.canvas.toDataURL(),
-            text: shirt.text,
-            design: shirt.design
+    addCustomShirt() {
+        this.store.shirts.push({
+            img: document.querySelector('canvas').toDataURL(),
+            name: 'Custom Shirt: ' + document.getElementById('shirt-text').value || 'Custom Shirt',
+            price: '14.99',
+            quantity: 1
         })
 
+        this.renderCart()
         this.save()
     }
 
@@ -73,7 +75,6 @@ class Cart {
         let totalPrice = 0
 
         if (this.store.shirts.length === 0) {
-            console.log(this.store.shirts.length)
             dropdown.innerHTML = "<p>You have nothing in your cart :(</p>"
             document.getElementById('dropdown-price').innerText = '0.00'
             return
@@ -377,6 +378,9 @@ function initStore() {
     document.querySelectorAll('.shirt-designs img').forEach(img => {
         img.addEventListener('click', e => store.custom.changeDesign(e.target.dataset.index))
     })
+
+    // Click event listener for adding custom shirts to cart
+    document.getElementById('add-custom-shirt').addEventListener('click', () => cart.addCustomShirt())
 
     // CLick event listener for Merch add to cart buttons
     document.querySelectorAll('.merch button').forEach(button => {

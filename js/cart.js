@@ -12,13 +12,15 @@ class Cart {
         this.renderCart()
     }
 
-    addCustomShirt(shirt) {
-        this.store.customShirts.push({
-            img: shirt.canvas.toDataURL(),
-            text: shirt.text,
-            design: shirt.design
+    addCustomShirt() {
+        this.store.shirts.push({
+            img: document.querySelector('canvas').toDataURL(),
+            name: 'Custom Shirt: ' + document.getElementById('shirt-text').value,
+            price: '14.99',
+            quantity: 1
         })
 
+        this.renderCart()
         this.save()
     }
 

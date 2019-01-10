@@ -96,6 +96,9 @@ function initStore() {
         img.addEventListener('click', e => store.custom.changeDesign(e.target.dataset.index))
     })
 
+    // Click event listener for adding custom shirts to cart
+    document.getElementById('add-custom-shirt').addEventListener('click', () => cart.addCustomShirt())
+
     // CLick event listener for Merch add to cart buttons
     document.querySelectorAll('.merch button').forEach(button => {
         button.addEventListener('click', e => cart.addShirt(e))
