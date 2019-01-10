@@ -7,12 +7,17 @@ window.onload = () => {
         navList.style.display = isShown ? 'none' : 'block'
     })
 
-    window.addEventListener('resize', () => {
-        if (window.innerHeight > 900)
-            document.querySelector('nav ul').style.display = 'block'
+    document.querySelector('.dropdown').addEventListener('click', () => {
+        const cart = document.querySelector('.dropdown-content')
+        cart.style.display = cart.style.display === 'block' ? 'none' : 'block'
     })
 
-    navList = document.querySelector('nav ul')
+    window.addEventListener('resize', () => {
+        if (window.innerHeight > 900)
+            document.querySelector('nav .nav-right').style.display = 'block'
+    })
+
+    navList = document.querySelector('nav .nav-right')
     cart = new Cart()
 
     init()
@@ -165,7 +170,7 @@ function initMap() {
                 longitude: 0.1278,
                 latitude: 51.5074
             }
-            
+
         }
         map = new Map(position)
         initTours()

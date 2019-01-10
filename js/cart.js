@@ -85,7 +85,7 @@ class Cart {
         this.store.shirts.forEach(shirt => {
             dropdown.innerHTML += this.getCartItemLayout(shirt)
             totalPrice += shirt.price * shirt.quantity
-        }) 
+        })
 
         document.getElementById('dropdown-price').innerText = totalPrice
 
@@ -127,11 +127,11 @@ class Cart {
                 </div>
                 <div class="cart-item-remove">
                     <span class="cart-quantity">X${shirt.quantity}</span>
-                    <button class="cart-remove-item blue" data-shirtName="${shirt.name}">
+                    <button class="cart-remove-item btn-blue" data-shirtName="${shirt.name}">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
             </div>
         `
-    } 
+    }
 }
