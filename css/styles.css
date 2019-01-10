@@ -319,6 +319,7 @@ body.background-img{
 
 .songs-list > div {
     padding: 15px;
+    text-transform: capitalize;
 }
 
 .song-info .add-to-cart {
