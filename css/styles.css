@@ -511,7 +511,8 @@ body.background-img{
         width: 55%;
         max-width: 600px;
         left: 25%;
-        height: 45%;
+        height: unset;
+        bottom: unset;
         overflow-y: hidden;
     }
 
