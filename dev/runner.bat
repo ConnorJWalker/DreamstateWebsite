@@ -1,1 +1,0 @@
-nodemon dev/linker.js --ignore js/script.bundle.js
