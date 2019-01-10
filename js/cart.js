@@ -78,7 +78,7 @@ class Cart {
         }
 
         // remove any items already in the cart so they can be re rendered
-        for (let i = dropdown.children.length - 1; i > 0; i--) {
+        for (let i = dropdown.children.length - 1; i >= 0; i--) {
             dropdown.children[i].remove();
         }
 
