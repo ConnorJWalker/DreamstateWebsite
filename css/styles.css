@@ -96,7 +96,7 @@ h2.display-title {
     height: 75%;
     position: fixed;
     bottom: 15%;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 #modal header {
@@ -317,6 +317,19 @@ body.background-img{
     flex: 0 49%;
 }
 
+.songs-list > div {
+    padding: 15px;
+}
+
+.song-info .add-to-cart {
+    padding: 2px 7px;
+    margin-right: 5px;
+    border-radius: 14px;
+    border: none;
+    background-image: var(--gradient);
+    color: var(--text-light);
+}
+
 /**** Store Styles ****/
 .custom-shirt canvas {
     width: 100%;
@@ -498,6 +511,7 @@ body.background-img{
         max-width: 600px;
         left: 25%;
         height: 45%;
+        overflow-y: hidden;
     }
 
     #modal-art {
