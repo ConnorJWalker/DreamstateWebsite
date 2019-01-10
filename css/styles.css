@@ -263,6 +263,56 @@ body.background-img{
     flex: 0 49%;
 }
 
+/**** Store Styles ****/
+.custom-shirt canvas {
+    width: 100%;
+}
+
+#clear-text {
+    margin-left: -5px;
+    background-color: #F55C5C;
+    width: 10%;
+}
+
+#clear-text, #shirt-text {
+    padding: 5px;
+}
+
+#clear-text i {
+    color: var(--text-light);
+}
+
+#shirt-text {
+    width: 90%;
+}
+
+.shirt-designs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.shirt-designs img {
+    width: 100%;
+    flex: 0 49%;
+    margin-bottom: 10px;
+}
+
+.merch-container img {
+    width: 100%;
+    height: auto;
+}
+
+.shirt-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.designs {
+    display: none;
+}
+
 /**** Updated styles for destop devices ****/
 @media screen and (min-width: 900px) {
     /**** Updated helper function for desktop devices ****/
@@ -380,11 +430,46 @@ body.background-img{
     .albums > div {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 10px;
     }
 
     #custom-album {
         width: 49%;
         height: auto;
+    }
+
+    /**** Store Page ****/
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .custom-container {
+        width: calc(70% - 10px);
+        display: inline-block;
+    }
+
+    .custom-shirt-input {
+        margin-bottom: 5%;
+    }
+
+    .custom-shirt canvas {
+        width: 30%;
+    }
+
+    .shirt-designs img {
+        flex: 0 30%;
+    }
+
+    .merch-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .merch-container > div {
+        width: 100%;
+        flex: 0 30%;
     }
 }
 
