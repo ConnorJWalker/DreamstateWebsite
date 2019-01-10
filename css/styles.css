@@ -78,6 +78,49 @@ h2.display-title {
     background-image: var(--gradient);
 }
 
+/**** Modal Styles ****/
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+#modal .body {
+    background-color: var(--text-light);
+    width: 100%;
+    height: 75%;
+    position: fixed;
+    bottom: 15%;
+    overflow: hidden;
+}
+
+#modal header {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px var(--text-dark) solid;
+    background-image: var(--gradient);
+}
+
+#modal header * {
+    color: var(--text-light);
+}
+
+#modal-close {
+    cursor: pointer;
+}
+
+#modal-art {
+    width: 100%;
+    height: auto;
+}
+
 /**** Container Styles ****/
 
 .container {
@@ -111,6 +154,7 @@ h2.display-title {
     top: calc(8px * 3 + 5px);
     left: 0;
     right: 25px;
+    display: none;
 }
 
 .nav-right a {
@@ -154,7 +198,8 @@ h2.display-title {
 }
 
 .cart-item-remove button {
-    padding: 0 3px;
+    padding: 0 3px !important;
+    background-color: #F55C5C;
 }
 
 .dropdown-list .cart-item-shirt img {
@@ -357,6 +402,7 @@ body.background-img{
         width: 90%;
         text-align: right;
         position: unset;
+        display: block;
     }
 
     nav .nav-right a {
@@ -445,6 +491,31 @@ body.background-img{
     #custom-album {
         width: 49%;
         height: auto;
+    }
+
+    #modal .body {
+        width: 55%;
+        max-width: 600px;
+        left: 25%;
+        height: 45%;
+    }
+
+    #modal-art {
+        width: 45%;
+        height: 45%;
+    }
+
+    .modal-main {
+        display: flex;
+    }
+
+    .songs-list {
+        width: 55% !important;
+        height: auto;
+        /**** This value is the largest the image next to the list will be at 45% width ****/
+        max-height: 270px;
+        overflow-y: scroll;
+        text-transform: capitalize;
     }
 
     /**** Store Page ****/
