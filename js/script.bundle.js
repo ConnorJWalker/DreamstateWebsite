@@ -16,7 +16,7 @@ class Cart {
     addCustomShirt() {
         this.store.shirts.push({
             img: document.querySelector('canvas').toDataURL(),
-            name: 'Custom Shirt: ' + document.getElementById('shirt-text').value || 'Custom Shirt',
+            name: 'Custom Shirt: ' + document.getElementById('shirt-text').value,
             price: '14.99',
             quantity: 1
         })
@@ -99,6 +99,12 @@ class Cart {
     }
 
     removeFromCart(e) {
+        // Make sure that the dataset can be found, even if the icon sent the event instead of the button
+        if (!e.target.dataset.shirtname) {
+            removeFromCart({ target: e.target.parentElement })
+            return
+        }
+
         const shirtName = e.target.dataset.shirtname
 
         this.store.shirts.forEach(shirt => {

@@ -98,6 +98,12 @@ class Cart {
     }
 
     removeFromCart(e) {
+        // Make sure that the dataset can be found, even if the icon sent the event instead of the button
+        if (!e.target.dataset.shirtname) {
+            removeFromCart({ target: e.target.parentElement })
+            return
+        }
+
         const shirtName = e.target.dataset.shirtname
 
         this.store.shirts.forEach(shirt => {
